@@ -1,0 +1,36 @@
+{
+  "functions": {
+    "app/api/github/webhook/route.ts": {
+      "maxDuration": 30
+    },
+    "app/api/github/events/route.ts": {
+      "maxDuration": 10
+    },
+    "app/api/init/route.ts": {
+      "maxDuration": 15
+    }
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Powered-By",
+          "value": "GitHub Webhook Dashboard"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ]
+    }
+  ],
+  "env": {
+    "DATABASE_URL": "@database_url",
+    "WEBHOOK_SECRET": "@webhook_secret"
+  }
+}
