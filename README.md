@@ -25,22 +25,6 @@ This project fulfills the developer assessment task requirements:
 - 🎨 **Clean, minimal UI** with proper event formatting
 - 📱 **Responsive design** for all devices
 
-## 🗄️ **Database Schema**
-
-The system uses PostgreSQL with the following schema (matching MongoDB requirements):
-
-\`\`\`sql
-github_events (
-  id VARCHAR(255) PRIMARY KEY,
-  action VARCHAR(50) NOT NULL,           -- "push", "pull_request", "merge"
-  author VARCHAR(255) NOT NULL,          -- GitHub username
-  from_branch VARCHAR(255),              -- Source branch (null for push)
-  to_branch VARCHAR(255) NOT NULL,       -- Target branch
-  timestamp TIMESTAMP NOT NULL,          -- Event timestamp
-  request_id VARCHAR(255) NOT NULL       -- GitHub delivery ID
-)
-\`\`\`
-
 ## 🚀 **Getting Started**
 
 ### Prerequisites
